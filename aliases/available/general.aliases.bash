@@ -35,6 +35,8 @@ alias rb="ruby"
 
 # Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
 
+
+
 alias piano="pianobar"
 
 alias ..='cd ..'         # Go up one directory
@@ -42,14 +44,21 @@ alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up two directories
 alias -- -="cd -"        # Go back
 
+alias d='eval "deactivate"; cd ~/'
+alias evolve='. ~/evolve-env/bin/activate && cd ~/evolve'
+alias api='. ~/api-integration-suite-env/bin/activate && cd ~/api-integration-suite'
+alias test='cd ~/live/test && phpunit'
+alias migrate='~/migrate.sh'
+alias lint='cd ~/dev-image-linting && ./lint.sh'
+alias rabbit='~/rabbit.sh'
+
+env () {
+    source ~/$1-env/bin/activate;
+    cd ~/$1;
+}
+
 # Shell History
 alias h='history'
-
-# Tree
-if [ ! -x "$(which tree)" ]
-then
-  alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-fi
 
 # Directory
 alias	md='mkdir -p'
