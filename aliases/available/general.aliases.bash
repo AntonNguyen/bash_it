@@ -53,7 +53,11 @@ alias lint='cd ~/dev-image-linting && ./lint.sh'
 alias rabbit='~/rabbit.sh'
 
 env () {
-    source ~/$1-env/bin/activate;
+    if [ -d ~/$1-env ]
+    	source ~/$1-env/bin/activate;
+    else
+	source ~/$1/env/bin/activate;
+    fi;
     cd ~/$1;
 }
 
