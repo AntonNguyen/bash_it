@@ -52,7 +52,7 @@ alias migrate='~/migrate.sh'
 alias lint='cd ~/dev-image-linting && ./lint.sh'
 alias rabbit='~/rabbit.sh'
 
-env () {
+a-env () {
     if [ -d ~/$1-env ]
     	source ~/$1-env/bin/activate;
     else
